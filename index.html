@@ -79,7 +79,7 @@
       const name = document.getElementById("name").value;
       const amount = document.getElementById("amount").value;
 
-      const res = await fetch("https://paymentwebhook-backend.vercel.app/create-order", {
+      const res = await fetch("https://paymentwebhook-backend.vercel.app/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -107,7 +107,7 @@
         if (!currentOrderId) return;
 
         const res = await fetch(
-          `https://paymentwebhook-backend.vercel.app/${currentOrderId}`
+          `https://paymentwebhook-backend.vercel.app/api/payment/${currentOrderId}`
         );
 
         const data = await res.json();
