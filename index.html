@@ -107,7 +107,7 @@
         if (!currentOrderId) return;
 
         const res = await fetch(
-          `https://paymentwebhook-backend.vercel.app/api/payment/${currentOrderId}`
+          `https://paymentwebhook-backend.vercel.app/api/payment/status/${currentOrderId}`
         );
 
         const data = await res.json();
